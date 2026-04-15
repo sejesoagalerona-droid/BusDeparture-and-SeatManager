@@ -50,7 +50,7 @@ src/
 2.	Rotlhe Kome - 202403611
 3.	Aone Segokgo - 202402828
 4.	Kevin Modise - 202402179
-5.	Ushata Tapela – 202400838
+5.	Ushatha Tapela – 202400838
 
    ## Resporitory Link
    
