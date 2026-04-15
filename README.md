@@ -54,7 +54,7 @@ src/
 
    ## Resporitory Link
    
-sejesoagalerona-droid/BusDeparture-and-SeatManager
+https://github.com/sejesoagalerona-droid/BusDeparture-and-SeatManager
 
 ## Concept used 
 -Encapsulation
