@@ -3,6 +3,8 @@ import java.util.Scanner;
     public static void main(String[] args){
 
         Scanner input = new Scanner(System.in);
+
+        System.out.println("Enter a number from 1-6: ")
         input = new Scanner(System.in);
         
         int choice;
@@ -44,6 +46,7 @@ import java.util.Scanner;
                 
 
             }
+          scanner.close();
 
         }
     }
