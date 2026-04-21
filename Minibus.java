@@ -1,4 +1,4 @@
-public class Minibus {
+public class Minibus extends Bus {
     private String minibusId;
     private int capacity;
     private Booking[] bookings;
