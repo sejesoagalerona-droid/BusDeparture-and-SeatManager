@@ -2,7 +2,7 @@ public class Minibus extends Bus {
     private String minibusId;
 
     public Minibus(String minibusId, int capacity) {
-        super(minibusId, capacity);
+        super(capacity);
         this.minibusId = minibusId;
     }
 
