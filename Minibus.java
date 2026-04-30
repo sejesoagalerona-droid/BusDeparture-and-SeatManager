@@ -2,7 +2,7 @@ public class Minibus extends Bus {
     private String minibusId;
 
     public Minibus(String minibusId, int capacity) {
-        super(minibusId, capacity); 
+        super(minibusId, capacity);
         this.minibusId = minibusId;
     }
 
@@ -12,6 +12,6 @@ public class Minibus extends Bus {
 
     @Override
     public String toString() {
-        return String.format("Minibus Id: %s, Capacity: %d", getMinibusId(), capacity);
+        return String.format("Minibus Id: %s, Capacity: %d", getMinibusId(), getCapacity());
     }
 }
