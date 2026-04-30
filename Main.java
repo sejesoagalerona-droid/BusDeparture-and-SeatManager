@@ -60,7 +60,9 @@ public class Main {
                             String name = input.next();
                             System.out.println("Enter Passenger ID: ");
                             String pid = input.next();
-                            Passenger p = new Passenger(pid, name);
+                            System.out.println("Enter Phone Number: ");
+                            String phone = input.next();
+                            Passenger p = new Passenger(pid, name, phone, null);
                             String bookingId = "B" + (bookings.size() + 1);
                             Booking booking = new Booking(bookingId, p, bookBusId);
                             b.addBooking(booking);
