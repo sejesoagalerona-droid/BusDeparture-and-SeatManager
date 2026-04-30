@@ -3,9 +3,12 @@ import java.util.Scanner;
     public static void main(String[] args){
 
         Scanner input = new Scanner(System.in);
+        ArrayList<Bus> buses = new ArrayList<>();
+        ArrayList<Passenger> passengers = new ArrayList<>();
+        ArrayList<Booking> bookings = new ArrayList<>();
 
-        System.out.println("Enter a number from 1-6: ")
-        input = new Scanner(System.in);
+        System.out.println("Enter a number from 1-6: ");
+        input = input.nextInt();
         
         int choice;
 
