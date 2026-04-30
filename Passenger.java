@@ -1,6 +1,7 @@
 public class Passenger {
     private String passengerId;
     private String name;
+    private String phoneNumber;
     private Booking booking;
 
     public Passenger(String passengerId, String name, Booking booking) {
@@ -15,6 +16,10 @@ public class Passenger {
 
     public String getName() {
         return name;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
     public void setName(String name) {
