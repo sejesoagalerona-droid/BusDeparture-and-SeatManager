@@ -4,8 +4,8 @@ public class Passenger {
     private String phoneNumber;
     private Booking booking;
 
-    public Passenger(String passengerId, String name, Booking booking) {
-        super(passengerId, name)
+    public Passenger(String passengerId, String name, String phoneNumber, Booking booking) {
+        super(passengerId, name , phoneNumber)
         this.passengerId = passengerId;
         this.name = name;
     }
@@ -28,4 +28,9 @@ public class Passenger {
         }
         else {
             throw new IllegalArgumentException("Name cannot be empty") ;
+}
+
+@Override
+public String toString() {
+    return String("Passenger: %s , Id: %s , phoneNumber: %s" , getName(), Id, phoneNumber);
 }
