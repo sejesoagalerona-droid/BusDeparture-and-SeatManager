@@ -16,4 +16,11 @@ public class Passenger {
     public String getName() {
         return name;
     }
+
+    public void setName(String name) {
+        if(name != null) {
+            this.name = name;
+        }
+        else {
+            throw new IllegalArgumentException("Name cannot be empty") ;
 }
