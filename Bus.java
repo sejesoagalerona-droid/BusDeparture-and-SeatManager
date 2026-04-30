@@ -36,4 +36,8 @@ public class Bus {
     public String toString() {
         return String.format("Bus Id: %s, Capacity: %d", getBusId(), getCapacity());
     }
+
+    public int getBookingCount() {
+    return count;
+}
 }
