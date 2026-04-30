@@ -1,81 +1,89 @@
+import java.util.ArrayList;
 import java.util.Scanner;
-  public class Main{
-    public static void main(String[] args){
 
+public class Main {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         ArrayList<Bus> buses = new ArrayList<>();
         ArrayList<Passenger> passengers = new ArrayList<>();
         ArrayList<Booking> bookings = new ArrayList<>();
 
-        System.out.println("Enter a number from 1-6: ");
-        input = input.nextInt();
-        
         int choice;
-
-        do{
-            System.out.println("----- Bus Seat Managemet System-----");
+        do {
+            System.out.println("----- Bus Seat Management System -----");
             System.out.println("1. View buses");
-            System.out.println("2. Add buses");
+            System.out.println("2. Add bus");
             System.out.println("3. View available seats");
             System.out.println("4. Book seat");
             System.out.println("5. Cancel Booking");
             System.out.println("6. Exit");
-
+            System.out.print("Enter a number from 1-6: ");
             choice = input.nextInt();
 
-            switch(choice) {
-
+            switch (choice) {
                 case 1:
-                if (bus.isEmpty()){
-                   System.out.println("Buses unavailable!")
-                     }else{
-                        for(Bus b:buses){ //loops through each bus in the list
-                          System.out.println(b);
+                    if (buses.isEmpty()) {
+                        System.out.println("Buses unavailable!");
+                    } else {
+                        for (Bus b : buses) {
+                            System.out.println(b);
                         }
-                   break;
+                    }
+                    break;
 
                 case 2:
-                System.out.println("Enter Bus ID: ");
-                  String busid = input.next();
-                
-                System.out.println("Enter bus capacity: ");
-                  int capacity = input.next();
-
-                Bus newBus = new Bus(busid, capacity);
-                buses.add(new Bus);
-                System.out.println ("Add buses selected");
-                
-                break;
-                
-                case 3: 
-                    if (buses.isEmpty()){
-                      System.out.println("No available buses");
-                    } else{ 
-                      for (Bus b:buses)
-                        int availableSeats = gethasSpace();
-                      System.out.println("Bus" + getbusid() + "has" + getavailableSeats() + "seats left.");
+                    System.out.println("Enter Bus ID: ");
+                    String busId = input.next();
+                    System.out.println("Enter bus capacity: ");
+                    int capacity = input.nextInt();
+                    buses.add(new Bus(busId, capacity));
+                    System.out.println("Bus added successfully!");
                     break;
-                case 4: 
-                  if ( bus.hasSpace()) {
-                    System.out.println (getBookingID());
-                    System.out.println (getPassenger());
-                  }
 
-                
+                case 3:
+                    if (buses.isEmpty()) {
+                        System.out.println("No available buses");
+                    } else {
+                        for (Bus b : buses) {
+                            int availableSeats = b.getCapacity() - b.getBookingCount();
+                            System.out.println("Bus " + b.getBusId() + " has " + availableSeats + " seats left.");
+                        }
+                    }
                     break;
-                case 5: 
+
+                case 4:
+                    System.out.println("Enter Bus ID to book: ");
+                    String bookBusId = input.next();
+                    for (Bus b : buses) {
+                        if (b.getBusId().equals(bookBusId) && b.hasSpace()) {
+                            System.out.println("Enter Passenger Name: ");
+                            String name = input.next();
+                            System.out.println("Enter Passenger ID: ");
+                            String pid = input.next();
+                            Passenger p = new Passenger(pid, name);
+                            String bookingId = "B" + (bookings.size() + 1);
+                            Booking booking = new Booking(bookingId, p, bookBusId);
+                            b.addBooking(booking);
+                            bookings.add(booking);
+                            System.out.println("Booking successful! ID: " + bookingId);
+                        }
+                    }
+                    break;
+
+                case 5:
                     System.out.println("Booking cancelled");
                     break;
-                case 6: 
-                   System.out.println("Exited");
+
+                case 6:
+                    System.out.println("Exited");
                     break;
-                default: 
+
+                default:
                     System.out.println("Invalid number! Please enter again.");
-                
-
             }
-          scanner.close();
 
-        }
+        } while (choice != 6);
+
+        input.close();
     }
-  }
+}
