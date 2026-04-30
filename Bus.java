@@ -24,5 +24,9 @@ public class Bus {
             bookings[count] = booking;
             count++;
         }
+
+ @Override
+ public String toString() {
+     return String("Bus Id: %s , Capacity: %d" , getbusId, capacity);
     }
 }
