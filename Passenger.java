@@ -23,7 +23,7 @@ public class Passenger {
     }
 
     public void setName(String name) {
-        if(name != null) {
+        if(name != null && !name.isEmpty()) {
             this.name = name;
         }
         else {
