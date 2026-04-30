@@ -29,8 +29,3 @@ public class Passenger {
         else {
             throw new IllegalArgumentException("Name cannot be empty") ;
 }
-
-@Override
-public String toString() {
-    return String("Passenger: %s , Id: %s , phoneNumber: %s" , getName(), Id, phoneNumber);
-}
