@@ -71,7 +71,31 @@ public class Main {
                     break;
 
                 case 5:
-                    System.out.println("Booking cancelled");
+                    if (bookings.isEmpty()) {
+                        System.out.println("No bookings to cancel.");
+                    } else {
+                        System.out.println("Enter Booking ID to cancel: ");
+                        String cancelId = input.next();
+                        boolean found = false;
+                        for (int i = 0; i < bookings.size(); i++) {
+                            if (bookings.get(i).getBookingId().equals(cancelId)) {
+                                String busId2 = bookings.get(i).getVehicleId();
+                                for (Bus b : buses) {
+                                    if (b.getBusId().equals(busId2)) {
+                                        b.removeBooking(cancelId);
+                                        break;
+                                    }
+                                }
+                                bookings.remove(i);
+                                found = true;
+                                System.out.println("Booking " + cancelId + " cancelled.");
+                                break;
+                            }
+                        }
+                        if (!found) {
+                            System.out.println("Booking ID not found.");
+                        }
+                    }
                     break;
 
                 case 6:
