@@ -26,17 +26,42 @@ import java.util.Scanner;
             switch(choice) {
 
                 case 1:
-                    System.out.println ("View buses selected");
+                if (bus.isEmpty()){
+                   System.out.println("Buses unavailable!")
+                     }else{
+                        for(Bus b:buses){ //loops through each bus in the list
+                          System.out.println(b);
+                        }
                    break;
 
                 case 2:
-                    System.out.println ("Add buses selected");
-                    break;
+                System.out.println("Enter Bus ID: ");
+                  String busid = input.next();
+                
+                System.out.println("Enter bus capacity: ");
+                  int capacity = input.next();
+
+                Bus newBus = new Bus(busid, capacity);
+                buses.add(new Bus);
+                System.out.println ("Add buses selected");
+                
+                break;
+                
                 case 3: 
-                    System.out.println("View available seats selected");
+                    if (buses.isEmpty()){
+                      System.out.println("No available buses");
+                    } else{ 
+                      for (Bus b:buses)
+                        int availableSeats = gethasSpace();
+                      System.out.println("Bus" + getbusid() + "has" + getavailableSeats() + "seats left.");
                     break;
                 case 4: 
-                    System.out.println("Book seat selected");       
+                  if ( bus.hasSpace()) {
+                    System.out.println (getBookingID());
+                    System.out.println (getPassenger());
+                  }
+
+                
                     break;
                 case 5: 
                     System.out.println("Booking cancelled");
