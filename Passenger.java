@@ -5,9 +5,9 @@ public class Passenger {
     private Booking booking;
 
     public Passenger(String passengerId, String name, String phoneNumber, Booking booking) {
-        super(passengerId, name , phoneNumber)
         this.passengerId = passengerId;
         this.name = name;
+        this.phoneNumber = phoneNumber;
     }
 
     public String getPassengerId() {
