@@ -15,6 +15,10 @@ public class Bus {
         return busId;
     }
 
+    public int getCapacity() {
+        return capacity;
+    }
+
     public boolean hasSpace() {
         return count < capacity;
     }
@@ -30,6 +34,6 @@ public class Bus {
 
     @Override
     public String toString() {
-        return String.format("Bus Id: %s, Capacity: %d", getBusId(), capacity);
+        return String.format("Bus Id: %s, Capacity: %d", getBusId(), getCapacity());
     }
 }
