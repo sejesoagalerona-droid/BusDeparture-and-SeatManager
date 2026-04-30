@@ -32,6 +32,18 @@ public class Bus {
         return false;
     }
 
+    public boolean removeBooking(String bookingId) {
+    for (int i = 0; i < count; i++) {
+        if (bookings[i].getBookingId().equals(bookingId)) {
+            bookings[i] = bookings[count - 1]; 
+            bookings[count - 1] = null;
+            count--;
+            return true;
+        }
+    }
+    return false;
+}
+
     @Override
     public String toString() {
         return String.format("Bus Id: %s, Capacity: %d", getBusId(), getCapacity());
