@@ -19,14 +19,17 @@ public class Bus {
         return count < capacity;
     }
 
-    public void addBooking(Booking booking) {
+    public boolean addBooking(Booking booking) {
         if (hasSpace()) {
             bookings[count] = booking;
             count++;
+            return true;
         }
+        return false;
+    }
 
- @Override
- public String toString() {
-     return String("Bus Id: %s , Capacity: %d" , getbusId, capacity);
+    @Override
+    public String toString() {
+        return String.format("Bus Id: %s, Capacity: %d", getBusId(), capacity);
     }
 }
