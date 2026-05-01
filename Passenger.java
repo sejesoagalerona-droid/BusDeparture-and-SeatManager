@@ -1,3 +1,5 @@
+package model;
+
 public class Passenger {
     private String passengerId;
     private String name;
