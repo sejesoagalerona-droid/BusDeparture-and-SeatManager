@@ -1,3 +1,5 @@
+package model;
+
 public class Bus {
     private String busId;
     private int capacity;
