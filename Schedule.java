@@ -1,3 +1,5 @@
+package model;
+
 public class Schedule {
     private String departureTime;
     private String arrivalTime;
