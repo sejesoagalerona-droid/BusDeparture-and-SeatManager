@@ -1,3 +1,5 @@
+package model;
+
 public class Minibus extends Bus {
     private String minibusId;
 
