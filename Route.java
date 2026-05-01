@@ -1,3 +1,5 @@
+package model;
+
 public class Route {
     private String origin;
     private String destination;
